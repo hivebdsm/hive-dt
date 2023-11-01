@@ -1,7 +1,7 @@
 {
   "name": "hive-dt",
   "private": false,
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "converter DateTime into timestamp and revert",
   "license": "MIT",
   "repository": {
@@ -29,6 +29,7 @@
   ],
   "keywords": [],
   "devDependencies": {
+    "@types/node": "^20.8.10",
     "prettier": "^3.0.3",
     "rimraf": "^5.0.5",
     "typescript": "^5.2.2"

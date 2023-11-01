@@ -37,30 +37,28 @@ export const toTimestamp = (value: string, deleteMS = false): number | null => {
 
   let result: number | undefined;
 
-  if (typeof value === 'string') {
-    if (value.includes(' ')) {
-      result = convertDateTime(value, ' ');
-    } else if (value.includes('T')) {
-      result = convertDateTime(value, 'T');
-    } else if (value.includes('.')) {
-      const dateParts = value.split('.');
-      result = new Date(Number(dateParts[2]), Number(dateParts[1]) - 1, Number(dateParts[0])).getTime();
-    } else if (value.includes('-')) {
-      const dateParts = value.split('-');
-      result = new Date(Number(dateParts[0]), Number(dateParts[1]) - 1, Number(dateParts[1])).getTime();
-    } else if (value.includes(':')) {
-      const timeParts = value.split(':');
-      const date = new Date();
+  if (value.includes(' ')) {
+    result = convertDateTime(value, ' ');
+  } else if (value.includes('T')) {
+    result = convertDateTime(value, 'T');
+  } else if (value.includes('.')) {
+    const dateParts = value.split('.');
+    result = new Date(Number(dateParts[2]), Number(dateParts[1]) - 1, Number(dateParts[0])).getTime();
+  } else if (value.includes('-')) {
+    const dateParts = value.split('-');
+    result = new Date(Number(dateParts[0]), Number(dateParts[1]) - 1, Number(dateParts[1])).getTime();
+  } else if (value.includes(':')) {
+    const timeParts = value.split(':');
+    const date = new Date();
 
-      result = new Date(
-        date.getFullYear(),
-        date.getMonth(),
-        date.getDate(),
-        Number(timeParts[0]),
-        Number(timeParts[1]),
-        Number(timeParts[2]) || 0,
-      ).getTime();
-    }
+    result = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      Number(timeParts[0]),
+      Number(timeParts[1]),
+      Number(timeParts[2]) || 0,
+    ).getTime();
   }
 
   if (!result || Number.isNaN(result) || result < 0) {
