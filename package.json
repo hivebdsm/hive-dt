@@ -1,7 +1,7 @@
 {
   "name": "hive-dt",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "converter DateTime into timestamp and revert",
   "license": "MIT",
   "repository": {
@@ -12,10 +12,10 @@
     "name": "BDSM",
     "url": "https://github.com/hivebdsm"
   },
-  "main": "index.js",
-  "module": "./es/index.js",
-  "types": "./lib/index.d.ts",
-  "jsnext:main": "./es/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/es/index.js",
+  "types": "./dist/lib/index.d.ts",
+  "jsnext:main": "./dist/es/index.js",
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && npm run build:commonjs && npm run build:es",
