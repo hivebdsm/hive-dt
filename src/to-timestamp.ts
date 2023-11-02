@@ -46,7 +46,7 @@ export const toTimestamp = (value: string, deleteMS = false): number | null => {
     result = new Date(Number(dateParts[2]), Number(dateParts[1]) - 1, Number(dateParts[0])).getTime();
   } else if (value.includes('-')) {
     const dateParts = value.split('-');
-    result = new Date(Number(dateParts[0]), Number(dateParts[1]) - 1, Number(dateParts[1])).getTime();
+    result = new Date(Number(dateParts[0]), Number(dateParts[1]) - 1, Number(dateParts[2])).getTime();
   } else if (value.includes(':')) {
     const timeParts = value.split(':');
     const date = new Date();
