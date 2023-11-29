@@ -40,5 +40,8 @@
       "url": "https://github.com/GarriGarrison"
     }
   ],
-  "sideEffects": false
+  "sideEffects": false,
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
 }
